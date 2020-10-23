@@ -1,4 +1,4 @@
-" WSL Debian
+" Gvim Win10
 set encoding=utf-8
 set fileencoding=utf-8
 set nohlsearch
@@ -15,12 +15,10 @@ set number
 syntax on
 colorscheme torte 
 highlight Normal guifg=white
+"highlight Normal guibg=#061412
+set guioptions -=m
+set guioptions -=T
 set guifont=Consolas:h11
-
-"if exists('$TMUX')
-    let &t_SI = "\e[5 q"
-    let &t_EI = "\e[1 q"
-"endif
 
 inoremap <expr> ( strpart(getline("."), col(".")-1, 1) =~? '\S' ? '(' : '()<left>'
 inoremap <expr> [ strpart(getline("."), col(".")-1, 1) =~? '\S' ? '[' : '[]<left>'
@@ -37,3 +35,6 @@ inoreabbr /** /**/<Esc>hi
 inoreabbr ///# /// <summary><Esc>o///<Esc>o/// </summary><Esc>kA
 inoreabbr for# for (int i = 0; i <N; i++)<Esc>FNcw
 inoreabbr forC for (size_t i = 0; i <N; ++i)<Esc>FNcw
+
+
+au BufRead,BufNewFile *.gd set filetype=gdscript3
